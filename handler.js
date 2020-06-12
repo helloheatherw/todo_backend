@@ -27,12 +27,8 @@ app.delete("/tasks/:taskId", function(request, response) {
   const someResponse = { 
     "message": `You issued a delete request for ID: ${taskId}`
   }
-
-  if(taskId > 2) {
-    response.status(404).send({ "message": "Not a valid task id"})
-  } else {
-    response.status(200).send(someResponse)
-  }
+  
+  response.status(200).send(someResponse)
 })
 
 app.post("/tasks", function(request, response) {
